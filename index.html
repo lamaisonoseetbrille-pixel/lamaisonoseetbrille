@@ -20,7 +20,7 @@
       <div style="flex: 1.2; min-width: 320px; padding: 35px 30px; display: flex; flex-direction: column; justify-content: space-between;">
         
         <div>
-          <!-- ENTÊTE : BADGES & DATE -->
+          <!-- ENTÊTE -->
           <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
             <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
               <span style="background: linear-gradient(135deg, #fff0f3, #ffe3e8); color: #801336; font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 50px; border: 1px solid #f3c2cd; letter-spacing: 0.5px; text-transform: uppercase;">
@@ -59,35 +59,75 @@
           </div>
         </div>
 
-        <!-- BLOC FORMULAIRE D'INSCRIPTION CONNECTÉ À MAKE -->
+        <!-- BLOC FORMULAIRE -->
         <div style="background: linear-gradient(135deg, #fffbf2, #fff5f7); border: 1.5px solid #e2c981; border-radius: 16px; padding: 20px; box-shadow: 0 4px 15px rgba(197, 155, 39, 0.08);">
           <h3 style="margin: 0 0 12px 0; color: #801336; font-size: 1rem; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 0.5px;">
             🎁 Réserve ta place offerte gratuitement
           </h3>
 
-          <form action="https://hook.eu1.make.com/s2vy3ig9glcp3ws3241bme3dt9sgja91" method="POST">
+          <form id="queenForm">
             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
               <!-- INPUT PRÉNOM -->
               <div style="flex: 1; min-width: 140px; position: relative;">
-                <input type="text" name="prenom" placeholder="Ton prénom" required style="width: 100%; padding: 12px 16px; border: 1.5px solid #d4af37; border-radius: 30px; font-size: 0.9rem; outline: none; background: #ffffff; color: #333; box-sizing: border-box;">
+                <input type="text" id="prenom" name="prenom" placeholder="Ton prénom" required style="width: 100%; padding: 12px 16px; border: 1.5px solid #d4af37; border-radius: 30px; font-size: 0.9rem; outline: none; background: #ffffff; color: #333; box-sizing: border-box;">
               </div>
 
               <!-- INPUT EMAIL -->
               <div style="flex: 1.3; min-width: 180px; position: relative;">
-                <input type="email" name="email" placeholder="Ton adresse e-mail" required style="width: 100%; padding: 12px 16px; border: 1.5px solid #d4af37; border-radius: 30px; font-size: 0.9rem; outline: none; background: #ffffff; color: #333; box-sizing: border-box;">
+                <input type="email" id="email" name="email" placeholder="Ton adresse e-mail" required style="width: 100%; padding: 12px 16px; border: 1.5px solid #d4af37; border-radius: 30px; font-size: 0.9rem; outline: none; background: #ffffff; color: #333; box-sizing: border-box;">
               </div>
 
               <!-- BOUTON VALIDER -->
-              <button type="submit" style="flex: 1; min-width: 170px; padding: 12px 20px; border: none; border-radius: 30px; background: linear-gradient(135deg, #c59b27, #9e7917); color: #ffffff; font-size: 0.92rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(197, 155, 39, 0.3);">
-                Je m'inscris !
+              <button type="submit" id="btnSubmit" style="flex: 1; min-width: 170px; padding: 12px 20px; border: none; border-radius: 30px; background: linear-gradient(135deg, #c59b27, #9e7917); color: #ffffff; font-size: 0.92rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(197, 155, 39, 0.3);">
+                Je m'inscris ! ✨
               </button>
             </div>
           </form>
+          
+          <p id="msgSuccess" style="display: none; color: #801336; font-weight: bold; text-align: center; margin-top: 15px;">
+            🎉 Ton inscription a bien été prise en compte !
+          </p>
         </div>
 
       </div>
     </div>
   </div>
+
+  <!-- SCRIPT D'ENVOI AUTOMATIQUE -->
+  <script>
+    document.getElementById('queenForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Empêche le rechargement de la page
+
+      const btn = document.getElementById('btnSubmit');
+      btn.innerText = 'Envoi en cours...';
+      btn.disabled = true;
+
+      const prenom = document.getElementById('prenom').value;
+      const email = document.getElementById('email').value;
+
+      // URL de ton Webhook Make
+      const webhookUrl = 'https://hook.eu1.make.com/s2vy3ig9glcp3ws3241bme3dt9sgja91';
+
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ prenom: prenom, email: email })
+      })
+      .then(response => {
+        document.getElementById('queenForm').reset();
+        btn.innerText = "Je m'inscris ! ✨";
+        btn.disabled = false;
+        document.getElementById('msgSuccess').style.display = 'block';
+      })
+      .catch(error => {
+        alert("Une erreur s'est produite. Recommence stp.");
+        btn.innerText = "Je m'inscris ! ✨";
+        btn.disabled = false;
+      });
+    });
+  </script>
 
 </body>
 </html>
