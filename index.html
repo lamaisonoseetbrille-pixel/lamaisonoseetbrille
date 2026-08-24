@@ -137,7 +137,7 @@
               </div>
 
               <button type="submit" id="btnSubmit" style="flex: 1; min-width: 170px; padding: 12px 20px; border: none; border-radius: 30px; background: linear-gradient(135deg, #c59b27, #9e7917); color: #ffffff; font-size: 0.92rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(197, 155, 39, 0.3);">
-                Je m'inscris ! ✨
+                Je m'inscris ! 
               </button>
             </div>
           </form>
@@ -179,14 +179,14 @@
       })
       .then(() => {
         document.getElementById('queenForm').reset();
-        btn.innerText = "Je m'inscris ! ✨";
+        btn.innerText = "Je m'inscris ! ";
         btn.disabled = false;
         // Affiche la boite de dialogue
         document.getElementById('successModal').style.display = 'flex';
       })
       .catch(() => {
         alert("Une erreur s'est produite.");
-        btn.innerText = "Je m'inscris ! ✨";
+        btn.innerText = "Je m'inscris ! ";
         btn.disabled = false;
       });
     });
