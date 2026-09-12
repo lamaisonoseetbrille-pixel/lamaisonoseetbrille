@@ -6,14 +6,14 @@
     <title>Queen Day - Atelier Bien-Être Saison 3</title>
     <!-- Import de la police Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Import de Tailwind CSS pour un design moderne et rapide -->
+    <!-- Import de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        bordeaux: '#801336', /* Couleur de votre charte graphique */
+                        bordeaux: '#801336',
                         dore: '#C5A059'
                     },
                     fontFamily: {
@@ -23,16 +23,14 @@
             }
         }
     </script>
-    <style>
-        /* Animation pour la modale de succès */
-        .modal-enter { opacity: 0; transform: scale(0.9); }
-        .modal-enter-active { opacity: 1; transform: scale(1); transition: all 0.3s ease-out; }
-    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <!-- Header / Bannière -->
-    <header class="bg-bordeaux text-white text-center py-8 px-4 shadow-lg">
+    <!-- Header / Bannière avec LOGO -->
+    <header class="bg-bordeaux text-white text-center py-8 px-4 shadow-lg flex flex-col items-center">
+        <!-- Emplacement Logo -->
+        <img src="logo.jpeg" alt="Logo La Maison Ose et Brille" class="h-20 w-auto mb-4 object-contain">
+        
         <h2 class="text-sm uppercase tracking-widest mb-2 text-dore font-semibold">La Maison Ose et Brille présente</h2>
         <h1 class="text-3xl md:text-5xl font-bold mb-4">Atelier Bien-Être : Talentueuse, Belle et Épanouie</h1>
         <p class="text-xl md:text-2xl font-light">Saison 3 - Dernière opportunité 2026</p>
@@ -42,7 +40,7 @@
         
         <!-- Colonne Gauche : L'affiche -->
         <div class="flex justify-center">
-            <img src="affiche-saison3.jpg" alt="Affiche Atelier Bien-Être Saison 3" class="rounded-xl shadow-2xl max-w-full h-auto border-4 border-white">
+        <img src="affiche-saison3.jpg" alt="Affiche Atelier Bien Être Saison 3 - 24 Octobre" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
         </div>
 
         <!-- Colonne Droite : Infos et Formulaire -->
@@ -109,9 +107,9 @@
         </div>
     </main>
 
-    <!-- Modale de succès (cachée par défaut) -->
+    <!-- Modale de succès -->
     <div id="successModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50">
-        <div class="bg-white rounded-2xl p-8 max-w-sm w-full mx-4 text-center transform transition-all">
+        <div class="bg-white rounded-2xl p-8 max-w-sm w-full mx-4 text-center">
             <div class="text-5xl mb-4">🎉</div>
             <h3 class="text-2xl font-bold text-bordeaux mb-2">Félicitations !</h3>
             <p class="text-gray-700 mb-6">Ta place est réservée. Vérifie ta boîte mail, tu viens de recevoir ta confirmation !</p>
@@ -122,54 +120,44 @@
     </div>
 
     <script>
-        // --- ⚠️ ATTENTION : COLLEZ VOTRE URL MAKE ICI ---
         const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/s2vy3ig9glcp3ws3241bme3dt9sgja91"; 
-        // ------------------------------------------------
 
         const form = document.getElementById('inscriptionForm');
         const submitBtn = document.getElementById('submitBtn');
         const successModal = document.getElementById('successModal');
 
         form.addEventListener('submit', async function(e) {
-            e.preventDefault(); // Empêche le rechargement de la page
+            e.preventDefault();
             
-            // Récupérer les valeurs
             const prenom = document.getElementById('prenom').value;
             const email = document.getElementById('email').value;
 
-            // Changer le texte du bouton pendant l'envoi
             submitBtn.textContent = "Réservation en cours...";
             submitBtn.disabled = true;
             submitBtn.classList.add('opacity-70');
 
             try {
-                // Envoi des données vers Make
                 const response = await fetch(MAKE_WEBHOOK_URL, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ prenom: prenom, email: email })
                 });
 
                 if(response.ok) {
-                    // Afficher la modale de succès
                     successModal.classList.remove('hidden');
-                    form.reset(); // Vider le formulaire
+                    form.reset();
                 } else {
-                    alert("Une erreur est survenue lors de la réservation. Veuillez réessayer.");
+                    alert("Une erreur est survenue lors de la réservation.");
                 }
             } catch (error) {
-                alert("Erreur de connexion. Vérifiez votre connexion internet.");
+                alert("Erreur de connexion.");
             } finally {
-                // Remettre le bouton à son état normal
                 submitBtn.textContent = "Je réserve ma place";
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('opacity-70');
             }
         });
 
-        // Fonction pour fermer la modale
         function closeModal() {
             successModal.classList.add('hidden');
         }
