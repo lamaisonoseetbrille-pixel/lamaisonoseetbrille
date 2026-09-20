@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier Bien-Être Saison 3</title>
-    <!-- Import de la police Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Import de Tailwind CSS -->
+    <title>Les 100 Jours Ose & Brille® | Du potentiel à l'accomplissement</title>
+    <!-- Police Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -14,7 +14,9 @@
                 extend: {
                     colors: {
                         bordeaux: '#801336',
-                        dore: '#C5A059'
+                        dore: '#C5A059',
+                        creme: '#FAF6F0',
+                        rosePoudre: '#FDF0F3'
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
@@ -24,142 +26,543 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body class="bg-white text-gray-800 font-sans antialiased selection:bg-dore selection:text-white">
 
-    <!-- Header / Bannière avec LOGO -->
-    <header class="bg-bordeaux text-white text-center py-8 px-4 shadow-lg flex flex-col items-center">
-        <!-- Emplacement Logo -->
-        <img src="logo.jpeg" alt="Logo La Maison Ose et Brille" class="h-20 w-auto mb-4 object-contain">
-        
-        <h2 class="text-sm uppercase tracking-widest mb-2 text-dore font-semibold">La Maison Ose et Brille présente</h2>
-        <h1 class="text-3xl md:text-5xl font-bold mb-4">Atelier Bien-Être : Talentueuse, Belle et Épanouie</h1>
-        <p class="text-xl md:text-2xl font-light">Saison 3 - Dernière opportunité 2026</p>
+    <!-- BARRE DE NAVIGATION EN TÊTE -->
+    <header class="bg-bordeaux text-white py-4 px-6 shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+                <img src="logo.png" alt="Ose & Brille Logo" class="h-12 w-auto object-contain">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-dore font-semibold block">Méthode Ose & Brille®</span>
+                    <span class="font-bold text-lg leading-tight">Valentine Déovie</span>
+                </div>
+            </div>
+            <div class="flex gap-3 text-xs md:text-sm">
+                <a href="#hero" class="bg-dore text-bordeaux font-bold px-4 py-2 rounded-lg hover:bg-yellow-500 transition">Les 100 Jours (En ligne)</a>
+                <a href="#queen-day" class="border border-dore text-dore font-semibold px-4 py-2 rounded-lg hover:bg-dore hover:text-bordeaux transition">Queen Day (24 Oct)</a>
+            </div>
+        </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        
-        <!-- Colonne Gauche : L'affiche -->
-        <div class="flex justify-center">
-        <img src="affiche-saison3.jpg" alt="Affiche Atelier Bien Être Saison 3 - 24 Octobre" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-        </div>
-
-        <!-- Colonne Droite : Infos et Formulaire -->
-        <div>
-            <div class="bg-white rounded-2xl shadow-xl p-8 mb-8 border-t-4 border-bordeaux">
-                <h3 class="text-2xl font-bold text-bordeaux mb-6 border-b pb-2">Informations Clés</h3>
+    <!-- SECTION 1 — HERO -->
+    <section id="hero" class="bg-creme py-12 md:py-20 border-b border-pink-100">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block bg-rosePoudre text-bordeaux font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-4 border border-pink-200">
+                    ✨ LES 100 JOURS OSE & BRILLE®
+                </span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-bordeaux leading-tight mb-6">
+                    Tu sais que tu peux faire plus.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 font-medium mb-4">
+                    Mais combien de temps encore vas-tu repousser ce qui compte vraiment pour toi ?
+                </p>
+                <p class="text-bordeaux font-bold text-lg mb-6">
+                    100 jours pour passer du potentiel à l’accomplissement.
+                </p>
                 
-                <ul class="space-y-4 mb-8 text-lg">
-                    <li class="flex items-center">
-                        <span class="text-2xl mr-3">📅</span>
-                        <strong>Date :</strong>&nbsp; Samedi 24 Octobre 2026
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-2xl mr-3">⏰</span>
-                        <strong>Heure :</strong>&nbsp; De 10h à 18h
-                    </li>
-                    <li class="flex flex-col mt-2">
-                        <div class="flex items-center">
-                            <span class="text-2xl mr-3">📍</span>
-                            <strong>Lieu :</strong>
-                        </div>
-                        <span class="ml-9 text-gray-600">Hôtel Mercure<br>22 Av. Jean Lolive, 93500 Pantin</span>
-                    </li>
-                    <li class="flex items-center mt-4 text-bordeaux font-semibold">
-                        <span class="text-2xl mr-3">👗</span>
-                        Dress Code : Chic Couleur Printemps
-                    </li>
-                </ul>
+                <div class="bg-white p-4 rounded-xl border-l-4 border-dore shadow-sm mb-8">
+                    <p class="text-sm font-semibold text-gray-600">📅 DATES DU PROGRAMME :</p>
+                    <p class="text-lg font-bold text-bordeaux">Du 27 septembre 2026 au 4 janvier 2027</p>
+                    <p class="text-xs text-dore font-bold mt-1 tracking-widest">OSE • AGIS • CONSTRUIS • ACCOMPLIS</p>
+                </div>
 
-                <h3 class="text-xl font-bold text-bordeaux mb-4 border-b pb-2">Au Programme</h3>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
-                    <li><strong>Masterclass :</strong> "Hormones en Harmonie"</li>
-                    <li>Échanges et partages</li>
-                    <li>Séances ateliers pratiques</li>
-                    <li>Stands d'exposition produits</li>
-                </ul>
+                <div class="space-y-3">
+                    <a href="#tarifs" class="block text-center bg-bordeaux hover:bg-red-900 text-white font-bold text-lg py-4 px-8 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+                        JE REJOINS LES 100 JOURS
+                    </a>
+                    <p class="text-center text-sm font-medium text-gray-600">
+                        699 € comptant ou 2 × 350 €
+                    </p>
+                </div>
 
-                <h3 class="text-xl font-bold text-dore mb-4 border-b pb-2">✨ BONUS VIP</h3>
-                <p class="text-gray-700 italic mb-2">Massage et gommage des pieds, cadeaux surprises, Beauty Bag, Déjeuner OFFERT.</p>
+                <p class="italic text-gray-600 text-center md:text-left mt-6 font-medium">
+                    Passer du « Je sais que je peux » au « Je l’ai fait ».
+                </p>
             </div>
 
-            <!-- Formulaire d'inscription -->
-            <div id="reservation" class="bg-bordeaux text-white rounded-2xl shadow-xl p-8">
-                <h3 class="text-2xl font-bold mb-2 text-center text-dore">Réserve ta place maintenant !</h3>
-                <p class="text-center mb-6 text-sm opacity-90">Attention : Places limitées</p>
-                
-                <form id="inscriptionForm" class="space-y-4">
-                    <div>
-                        <label for="prenom" class="block text-sm font-medium mb-1">Ton Prénom</label>
-                        <input type="text" id="prenom" name="prenom" required class="w-full px-4 py-3 rounded-lg text-gray-900 border-0 focus:ring-2 focus:ring-dore outline-none" placeholder="Ex: Valentine">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium mb-1">Ton Adresse E-mail</label>
-                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg text-gray-900 border-0 focus:ring-2 focus:ring-dore outline-none" placeholder="ton.email@exemple.com">
-                    </div>
-                    <button type="submit" id="submitBtn" class="w-full bg-dore hover:bg-yellow-600 text-bordeaux font-bold text-lg py-3 rounded-lg transition duration-300 shadow-md transform hover:scale-105">
-                        Je réserve ma place
-                    </button>
-                </form>
-                <div class="text-center mt-4 text-sm opacity-80">
-                    <p>Contact : +33 6 52 80 13 05</p>
+            <div class="flex justify-center">
+                <div class="relative">
+                    <div class="absolute -inset-2 bg-dore rounded-2xl transform rotate-2 opacity-30 blur-sm"></div>
+                    <img src="les100joursoseetbrille.jpg" alt="Valentine Déovie - Les 100 Jours" class="relative rounded-2xl shadow-2xl max-w-full h-auto border-4 border-white object-cover">
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Modale de succès -->
-    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50">
-        <div class="bg-white rounded-2xl p-8 max-w-sm w-full mx-4 text-center">
-            <div class="text-5xl mb-4">🎉</div>
-            <h3 class="text-2xl font-bold text-bordeaux mb-2">Félicitations !</h3>
-            <p class="text-gray-700 mb-6">Ta place est réservée. Vérifie ta boîte mail, tu viens de recevoir ta confirmation !</p>
-            <button onclick="closeModal()" class="bg-bordeaux text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-900 w-full">
-                Fermer
-            </button>
+    <!-- SECTION 2 — LE PROBLÈME -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-4xl font-bold text-bordeaux mb-4">
+                Tu sais que tu as du potentiel.<br>Alors pourquoi as-tu encore l'impression de tourner en rond ?
+            </h2>
+            <p class="text-gray-600 mb-10">Tu as peut-être :</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-12">
+                <div class="bg-rosePoudre p-4 rounded-xl border border-pink-100 flex items-start gap-3">
+                    <span class="text-bordeaux font-bold">❌</span>
+                    <p class="text-gray-800 text-sm">Des idées que tu repousses depuis des mois</p>
+                </div>
+                <div class="bg-rosePoudre p-4 rounded-xl border border-pink-100 flex items-start gap-3">
+                    <span class="text-bordeaux font-bold">❌</span>
+                    <p class="text-gray-800 text-sm">Un projet que tu aimerais enfin lancer</p>
+                </div>
+                <div class="bg-rosePoudre p-4 rounded-xl border border-pink-100 flex items-start gap-3">
+                    <span class="text-bordeaux font-bold">❌</span>
+                    <p class="text-gray-800 text-sm">Une évolution professionnelle que tu n'oses pas provoquer</p>
+                </div>
+                <div class="bg-rosePoudre p-4 rounded-xl border border-pink-100 flex items-start gap-3">
+                    <span class="text-bordeaux font-bold">❌</span>
+                    <p class="text-gray-800 text-sm">Une envie de changement que tu n'arrives pas à concrétiser</p>
+                </div>
+                <div class="bg-rosePoudre p-4 rounded-xl border border-pink-100 flex items-start gap-3">
+                    <span class="text-bordeaux font-bold">❌</span>
+                    <p class="text-gray-800 text-sm">Commencé plusieurs choses sans réellement les terminer</p>
+                </div>
+                <div class="bg-rosePoudre p-4 rounded-xl border border-pink-100 flex items-start gap-3">
+                    <span class="text-bordeaux font-bold">❌</span>
+                    <p class="text-gray-800 text-sm">Peur de te tromper ou de ne pas être à la hauteur</p>
+                </div>
+            </div>
+
+            <div class="bg-creme p-8 rounded-2xl border border-dore/30 text-left max-w-2xl mx-auto">
+                <p class="text-lg font-bold text-bordeaux mb-2">Et pendant ce temps...</p>
+                <p class="text-gray-700 mb-4">Les semaines passent.</p>
+                <p class="text-gray-800 italic font-medium">
+                    Tu regardes tes objectifs, tes rêves et tes idées en te disant :<br>
+                    <span class="text-bordeaux font-bold">« Je sais que je peux le faire… mais pourquoi je n'arrive pas à passer à l'action ? »</span>
+                </p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/s2vy3ig9glcp3ws3241bme3dt9sgja91"; 
-
-        const form = document.getElementById('inscriptionForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const successModal = document.getElementById('successModal');
-
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
+    <!-- SECTION 4 — POUR QUI ? -->
+    <section class="py-16 bg-creme">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-bordeaux text-center mb-8">Les 100 Jours sont pour toi si...</h2>
             
-            const prenom = document.getElementById('prenom').value;
-            const email = document.getElementById('email').value;
+            <div class="bg-white rounded-2xl shadow-md p-8 border-t-4 border-bordeaux mb-8">
+                <p class="font-bold text-gray-800 mb-6">Tu es une femme qui :</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-green-600 font-bold text-xl">✓</span>
+                        <p class="text-gray-700">Sait qu'elle a davantage à offrir</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-green-600 font-bold text-xl">✓</span>
+                        <p class="text-gray-700">Porte une idée, un projet ou une ambition</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-green-600 font-bold text-xl">✓</span>
+                        <p class="text-gray-700">Veut évoluer personnellement ou professionnellement</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-green-600 font-bold text-xl">✓</span>
+                        <p class="text-gray-700">Procrastine sur quelque chose d'important</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-green-600 font-bold text-xl">✓</span>
+                        <p class="text-gray-700">Manque parfois de clarté ou de structure</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-green-600 font-bold text-xl">✓</span>
+                        <p class="text-gray-700">Veut arrêter de commencer sans terminer</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-green-600 font-bold text-xl">✓</span>
+                        <p class="text-gray-700">Veut retrouver une dynamique d'action</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-green-600 font-bold text-xl">✓</span>
+                        <p class="text-gray-700">Veut faire de cette fin d'année une période de construction</p>
+                    </div>
+                </div>
+            </div>
 
-            submitBtn.textContent = "Réservation en cours...";
-            submitBtn.disabled = true;
-            submitBtn.classList.add('opacity-70');
+            <div class="text-center font-medium text-gray-700 space-y-1">
+                <p>Tu n'as pas besoin d'avoir tout compris avant de commencer.</p>
+                <p class="text-bordeaux font-bold">Tu as simplement besoin d'avoir quelque chose que tu veux faire avancer.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- SECTION 5 — CE QUE NOUS ALLONS FAIRE (4 ÉTAPES) -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-dore font-bold text-2xl">🌸</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-bordeaux">100 JOURS. 4 ÉTAPES.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Étape 1 -->
+                <div class="bg-rosePoudre rounded-2xl p-6 border-b-4 border-bordeaux shadow-sm relative">
+                    <span class="text-4xl font-extrabold text-bordeaux/20 absolute top-4 right-4">01</span>
+                    <h3 class="text-xl font-bold text-bordeaux mb-1">01 — OSE</h3>
+                    <p class="text-xs font-semibold text-dore uppercase mb-4">Jours 1 à 25</p>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>• Faire le point</li>
+                        <li>• Clarifier ce qui compte</li>
+                        <li>• Identifier ce qui te bloque</li>
+                        <li>• Choisir ta priorité</li>
+                    </ul>
+                </div>
+
+                <!-- Étape 2 -->
+                <div class="bg-rosePoudre rounded-2xl p-6 border-b-4 border-bordeaux shadow-sm relative">
+                    <span class="text-4xl font-extrabold text-bordeaux/20 absolute top-4 right-4">02</span>
+                    <h3 class="text-xl font-bold text-bordeaux mb-1">02 — AGIS</h3>
+                    <p class="text-xs font-semibold text-dore uppercase mb-4">Jours 26 à 50</p>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>• Passer de l'intention à l'action</li>
+                        <li>• Construire ton plan</li>
+                        <li>• Développer ta discipline</li>
+                        <li>• Produire des résultats concrets</li>
+                    </ul>
+                </div>
+
+                <!-- Étape 3 -->
+                <div class="bg-rosePoudre rounded-2xl p-6 border-b-4 border-bordeaux shadow-sm relative">
+                    <span class="text-4xl font-extrabold text-bordeaux/20 absolute top-4 right-4">03</span>
+                    <h3 class="text-xl font-bold text-bordeaux mb-1">03 — CONSTRUIS</h3>
+                    <p class="text-xs font-semibold text-dore uppercase mb-4">Jours 51 à 75</p>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>• Structurer</li>
+                        <li>• Valoriser ton potentiel</li>
+                        <li>• Créer ton système d'action</li>
+                        <li>• Efforts durables</li>
+                    </ul>
+                </div>
+
+                <!-- Étape 4 -->
+                <div class="bg-rosePoudre rounded-2xl p-6 border-b-4 border-bordeaux shadow-sm relative">
+                    <span class="text-4xl font-extrabold text-bordeaux/20 absolute top-4 right-4">04</span>
+                    <h3 class="text-xl font-bold text-bordeaux mb-1">04 — ACCOMPLIS</h3>
+                    <p class="text-xs font-semibold text-dore uppercase mb-4">Jours 76 à 100</p>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>• Terminer & Consolider</li>
+                        <li>• Mesurer le chemin parcouru</li>
+                        <li>• Célébrer ton accomplissement</li>
+                        <li>• Construire la suite</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 — CE QUE TU VAS RECEVOIR -->
+    <section class="py-16 bg-creme">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-bordeaux">Tu ne seras pas seule avec ta motivation.</h2>
+                <p class="text-gray-600 mt-2">Pendant les 100 jours, tu bénéficieras de :</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-pink-100 flex gap-4 items-start">
+                    <span class="text-3xl">📖</span>
+                    <div>
+                        <h3 class="font-bold text-bordeaux text-lg">Un workbook OSE & BRILLE®</h3>
+                        <p class="text-sm text-gray-600">Pour réfléchir, décider, planifier et suivre ton évolution.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-pink-100 flex gap-4 items-start">
+                    <span class="text-3xl">🎯</span>
+                    <div>
+                        <h3 class="font-bold text-bordeaux text-lg">Des outils de transformation</h3>
+                        <p class="text-sm text-gray-600">Bilan 360°, roue de vie, clarification des priorités, carte des blocages, vision, objectifs et plan d'action.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-pink-100 flex gap-4 items-start">
+                    <span class="text-3xl">🗓️</span>
+                    <div>
+                        <h3 class="font-bold text-bordeaux text-lg">Un accompagnement structuré sur 100 jours</h3>
+                        <p class="text-sm text-gray-600">Avec des étapes précises pour avancer progressivement.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-pink-100 flex gap-4 items-start">
+                    <span class="text-3xl">👥</span>
+                    <div>
+                        <h3 class="font-bold text-bordeaux text-lg">Des sessions collectives en groupe</h3>
+                        <p class="text-sm text-gray-600">Des temps pour apprendre, faire le point, poser tes questions et repartir avec une action concrète.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-pink-100 flex gap-4 items-start">
+                    <span class="text-3xl">📱</span>
+                    <div>
+                        <h3 class="font-bold text-bordeaux text-lg">Un espace privé d'accountability</h3>
+                        <p class="text-sm text-gray-600">Pour ne pas rester seule face à tes engagements.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-pink-100 flex gap-4 items-start">
+                    <span class="text-3xl">🔥</span>
+                    <div>
+                        <h3 class="font-bold text-bordeaux text-lg">Des challenges d'action</h3>
+                        <p class="text-sm text-gray-600">Parce que comprendre ne suffit pas. Il faut agir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-bordeaux text-white p-6 rounded-xl shadow-md text-center">
+                <h3 class="font-bold text-xl text-dore">🏆 Un bilan final</h3>
+                <p class="text-sm opacity-90 mt-1">Pour mesurer ce que tu as réellement fait et construire la suite.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7 & 8 — CYCLE + CE QUE TU POURRAIS AVOIR ACCOMPLI -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-bordeaux text-center mb-10">Comment ça fonctionne ?</h2>
+            
+            <p class="text-center font-semibold text-gray-700 mb-8">Chaque semaine, tu vas suivre un cycle simple :</p>
+            
+            <div class="flex flex-wrap justify-center items-center gap-3 text-center text-sm font-bold text-bordeaux mb-12">
+                <span class="bg-rosePoudre px-4 py-2 rounded-lg border border-pink-200">APPRENDRE</span>
+                <span>↓</span>
+                <span class="bg-rosePoudre px-4 py-2 rounded-lg border border-pink-200">RÉFLÉCHIR</span>
+                <span>↓</span>
+                <span class="bg-rosePoudre px-4 py-2 rounded-lg border border-pink-200">AGIR</span>
+                <span>↓</span>
+                <span class="bg-rosePoudre px-4 py-2 rounded-lg border border-pink-200">MESURER</span>
+                <span>↓</span>
+                <span class="bg-rosePoudre px-4 py-2 rounded-lg border border-pink-200">AJUSTER</span>
+            </div>
+
+            <div class="bg-rosePoudre p-8 rounded-2xl border border-pink-200 max-w-2xl mx-auto text-center mb-16">
+                <h3 class="text-2xl font-bold text-bordeaux mb-6">Imagine arriver au 4 janvier 2027 et pouvoir dire :</h3>
+                <ul class="text-left space-y-3 font-medium text-gray-800">
+                    <li class="flex items-center gap-2"><span class="text-dore">✨</span> « J'ai enfin clarifié ce que je veux. »</li>
+                    <li class="flex items-center gap-2"><span class="text-dore">✨</span> « J'ai arrêté de repousser cette chose importante. »</li>
+                    <li class="flex items-center gap-2"><span class="text-dore">✨</span> « J'ai posé des actions concrètes. »</li>
+                    <li class="flex items-center gap-2"><span class="text-dore">✨</span> « J'ai terminé quelque chose qui comptait pour moi. »</li>
+                    <li class="flex items-center gap-2"><span class="text-dore">✨</span> « Je me comprends mieux. »</li>
+                    <li class="flex items-center gap-2"><span class="text-dore">✨</span> « J'ai une direction claire pour la suite. »</li>
+                    <li class="text-bordeaux font-bold text-xl pt-2 flex items-center gap-2"><span class="text-dore">🎉</span> « JE L'AI FAIT. »</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10 — TARIFS ET INVESTISSEMENT -->
+    <section id="tarifs" class="py-16 bg-creme border-t border-b border-pink-100">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <span class="text-xs uppercase tracking-widest text-dore font-bold">Investissement</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-bordeaux mt-1 mb-2">REJOINS LES 100 JOURS OSE & BRILLE®</h2>
+            <p class="text-gray-600 font-medium mb-8">Du 27 septembre 2026 au 4 janvier 2027</p>
+
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-dore relative mb-6">
+                <div class="text-4xl font-extrabold text-bordeaux mb-2">699 €</div>
+                <p class="text-gray-500 font-medium text-sm mb-6">Paiement comptant ou en plusieurs fois</p>
+                <div class="text-xl font-bold text-dore mb-6">ou 2 × 350 €</div>
+                
+                <p class="text-xs text-gray-600 mb-6">
+                    Tu bénéficies de l'intégralité du parcours de 100 jours selon les modalités présentées.
+                </p>
+
+                <!-- Formulaire de réservation rapide / Redirection Stripe -->
+                <form id="form100Jours" onsubmit="soumettre100Jours(event)" class="space-y-4 max-w-md mx-auto text-left">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Prénom</label>
+                        <input type="text" id="prenom100" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-bordeaux outline-none" placeholder="Ton prénom">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">E-mail</label>
+                        <input type="email" id="email100" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-bordeaux outline-none" placeholder="ton.email@exemple.com">
+                    </div>
+                    <button type="submit" id="btnSubmit100" class="w-full bg-bordeaux hover:bg-red-900 text-white font-bold text-lg py-4 rounded-xl shadow-lg transition">
+                        JE REJOINS LES 100 JOURS
+                    </button>
+                </form>
+            </div>
+
+            <p class="text-xs text-gray-500 italic">
+                Places limitées afin de préserver la qualité de l'accompagnement.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 11 — PAS POUR TOI SI -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-bordeaux text-center mb-8">❌ Ce programme n'est pas pour toi si :</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <div class="p-4 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-700">
+                    Tu cherches une solution magique ;
+                </div>
+                <div class="p-4 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-700">
+                    Tu veux que quelqu'un accomplisse le travail à ta place ;
+                </div>
+                <div class="p-4 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-700">
+                    Tu ne veux prendre aucun engagement envers toi-même ;
+                </div>
+                <div class="p-4 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-700">
+                    Tu cherches uniquement de la motivation sans passage à l'action.
+                </div>
+            </div>
+
+            <div class="text-center text-sm font-semibold text-gray-700">
+                <p>Les 100 Jours sont un accompagnement.</p>
+                <p class="text-bordeaux font-bold mt-1">Je t'apporte le cadre, les outils et la méthode. Tu apportes ton engagement et tes actions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12 — QUI EST VALENTINE ? -->
+    <section class="py-16 bg-creme">
+        <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="les100joursoseetbrille.jpg" alt="Valentine Déovie" class="rounded-2xl shadow-xl border-4 border-white">
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold text-bordeaux mb-2">Je suis Valentine Déovie.</h2>
+                <p class="text-dore font-bold uppercase text-sm mb-6">Fondatrice de la Méthode Ose & Brille®</p>
+                
+                <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+                    J'accompagne les femmes que la vie a découragées à sortir ce qu'elles portent en elles et à le transformer en accomplissement.
+                </p>
+                <p class="text-gray-700 mb-6 text-sm leading-relaxed">
+                    J'ai créé OSE & BRILLE® autour d'une conviction simple : une femme peut avoir du potentiel, des idées et des rêves… et pourtant rester longtemps bloquée entre ce qu'elle sait qu'elle pourrait faire et ce qu'elle fait réellement.
+                </p>
+
+                <div class="bg-white p-4 rounded-xl border-l-4 border-bordeaux shadow-sm text-sm font-semibold text-bordeaux space-y-1">
+                    <p>On ose.</p>
+                    <p>On agit.</p>
+                    <p>On construit.</p>
+                    <p>On accomplit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 13 — FAQ -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-bordeaux text-center mb-10">Foire Aux Questions</h2>
+            
+            <div class="space-y-4">
+                <div class="border border-pink-100 rounded-xl p-6 bg-rosePoudre/30">
+                    <h3 class="font-bold text-bordeaux text-lg mb-2">Dois-je déjà avoir un projet précis ?</h3>
+                    <p class="text-sm text-gray-700">Non. Tu dois simplement avoir quelque chose que tu souhaites faire avancer : projet, évolution professionnelle, objectif personnel, activité, décision ou changement.</p>
+                </div>
+
+                <div class="border border-pink-100 rounded-xl p-6 bg-rosePoudre/30">
+                    <h3 class="font-bold text-bordeaux text-lg mb-2">Est-ce uniquement pour les entrepreneures ?</h3>
+                    <p class="text-sm text-gray-700">Non. Les 100 Jours s'adressent aux femmes qui souhaitent concrétiser quelque chose d'important dans leur vie.</p>
+                </div>
+
+                <div class="border border-pink-100 rounded-xl p-6 bg-rosePoudre/30">
+                    <h3 class="font-bold text-bordeaux text-lg mb-2">Est-ce que les résultats sont garantis ?</h3>
+                    <p class="text-sm text-gray-700">Non. Le programme fournit un cadre, des outils, un accompagnement et des mécanismes d'action. Ton évolution dépend également de ton implication et des actions que tu mets en œuvre.</p>
+                </div>
+
+                <div class="border border-pink-100 rounded-xl p-6 bg-rosePoudre/30">
+                    <h3 class="font-bold text-bordeaux text-lg mb-2">Et si je prends du retard ?</h3>
+                    <p class="text-sm text-gray-700">Tu n'as pas besoin d'être parfaite. Le programme prévoit justement des temps de bilan, d'ajustement et de reprise.</p>
+                </div>
+
+                <div class="border border-pink-100 rounded-xl p-6 bg-rosePoudre/30">
+                    <h3 class="font-bold text-bordeaux text-lg mb-2">Puis-je payer en plusieurs fois ?</h3>
+                    <p class="text-sm text-gray-700">Oui (options disponibles sur la page de paiement Stripe).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 14 — LE DERNIER APPEL -->
+    <section class="py-20 bg-bordeaux text-white text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-dore mb-6">Dans 100 jours...</h2>
+            
+            <div class="space-y-2 text-lg md:text-xl font-light mb-8">
+                <p>Tu peux encore être au même endroit.</p>
+                <p class="font-bold text-white">Ou tu peux regarder derrière toi et dire :</p>
+            </div>
+
+            <div class="space-y-2 text-dore font-semibold italic text-lg mb-10">
+                <p>« J'ai arrêté de repousser. »</p>
+                <p>« J'ai agi. »</p>
+                <p class="text-2xl font-extrabold not-italic text-white">« JE L'AI FAIT. »</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="uppercase text-xs tracking-widest text-dore font-bold">Les 100 Jours OSE & BRILLE®</p>
+                <p class="text-sm opacity-90">27 septembre 2026 → 4 janvier 2027</p>
+            </div>
+
+            <a href="#tarifs" class="inline-block bg-dore hover:bg-yellow-600 text-bordeaux font-extrabold text-xl py-4 px-10 rounded-xl shadow-2xl transition transform hover:scale-105">
+                JE REJOINS LES 100 JOURS
+            </a>
+
+            <p class="text-xs text-dore tracking-widest mt-8 uppercase font-semibold">
+                OSE • AGIS • CONSTRUIS • ACCOMPLIS
+            </p>
+        </div>
+    </section>
+
+    <!-- RAPPEL ÉVÉNEMENT QUEEN DAY (24 OCTOBRE) -->
+    <section id="queen-day" class="py-16 bg-white border-t border-gray-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <span class="text-bordeaux font-bold uppercase tracking-widest text-xs">Événement Présentiel</span>
+                <h2 class="text-3xl font-bold text-bordeaux mt-1">Atelier Bien-Être : Queen Day (Saison 3)</h2>
+                <p class="text-gray-600 text-sm mt-1">Samedi 24 Octobre 2026 • Hôtel Mercure Pantin</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <img src="affiche-saison3.png" alt="Affiche Queen Day" class="rounded-xl shadow-lg border-2 border-white max-w-sm mx-auto">
+                <div class="bg-creme p-6 rounded-2xl border border-dore/40">
+                    <h3 class="font-bold text-bordeaux text-lg mb-2">Informations & Réservation</h3>
+                    <p class="text-sm text-gray-700 mb-4">Masterclass "Hormones en Harmonie", Ateliers, Déjeuner OFFERT, Massage pieds & Beauty Bag.</p>
+                    <a href="mailto:contact@oseetbrille.com?subject=Réservation Queen Day 24 Octobre" class="block text-center bg-bordeaux text-white font-bold py-3 rounded-lg hover:bg-red-900 transition text-sm">
+                        Réserver ma place pour le Queen Day (Présentiel)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPT SOUMISSION & REDIRECTION STRIPE -->
+    <script>
+        const STRIPE_URL = "https://buy.stripe.com/test_28E5kEea2de76mYeQXeEo02";
+        const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/s2vy3ig9glcp3ws3241bme3dt9sgja91"; // Optionnel si tu enregistres la piste avant paiement
+
+        async function soumettre100Jours(e) {
+            e.preventDefault();
+            const prenom = document.getElementById('prenom100').value;
+            const email = document.getElementById('email100').value;
+            const btn = document.getElementById('btnSubmit100');
+
+            btn.textContent = "Redirection vers le paiement...";
+            btn.disabled = true;
+
+            // Envoi des infos au Webhook Make (si configuré)
             try {
-                const response = await fetch(MAKE_WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prenom: prenom, email: email })
-                });
-
-                if(response.ok) {
-                    successModal.classList.remove('hidden');
-                    form.reset();
-                } else {
-                    alert("Une erreur est survenue lors de la réservation.");
+                if (MAKE_WEBHOOK_URL && !MAKE_WEBHOOK_URL.includes("VOTRE_URL_ICI")) {
+                    await fetch(MAKE_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            prenom: prenom, 
+                            email: email, 
+                            programme: "100_JOURS_27_SEPTEMBRE" 
+                        })
+                    });
                 }
-            } catch (error) {
-                alert("Erreur de connexion.");
-            } finally {
-                submitBtn.textContent = "Je réserve ma place";
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('opacity-70');
+            } catch (err) {
+                console.log("Webkhook Make ignoré ou indisponible, suite de la redirection.");
             }
-        });
 
-        function closeModal() {
-            successModal.classList.add('hidden');
+            // Redirection Stripe avec pré-remplissage de l'e-mail
+            const stripeUrlAvecEmail = `${STRIPE_URL}?prefilled_email=${encodeURIComponent(email)}`;
+            window.location.href = stripeUrlAvecEmail;
         }
     </script>
 </body>
