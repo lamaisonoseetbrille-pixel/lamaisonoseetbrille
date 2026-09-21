@@ -41,8 +41,8 @@
             <div class="flex flex-wrap justify-center gap-3 text-xs md:text-sm">
                 <a href="#hero" class="bg-dore text-bordeaux font-bold px-4 py-2 rounded-lg hover:bg-yellow-500 transition">Les 100 Jours</a>
                 <a href="#atelierbienetre" class="border border-dore text-dore font-semibold px-4 py-2 rounded-lg hover:bg-dore hover:text-bordeaux transition">Atelier Bien-Être</a>
-                <a href="https://tidycal.com/valentinefonkou/45-minute-meeting" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-emerald-700 transition">Prendre RDV (45 min)</a>
-                <a href="https://tidycal.com/valentinefonkou/60-minute-meeting" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Bilan Scolaire (60 min)</a>
+                <a href="#reservation" onclick="selectionnerPrestation('Session Individuelle (45 min)')" class="bg-emerald-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-emerald-700 transition">Prendre RDV (45 min)</a>
+                <a href="#reservation" onclick="selectionnerPrestation('Bilan Scolaire (60 min)')" class="bg-indigo-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Bilan Scolaire (60 min)</a>
             </div>
         </div>
     </header>
@@ -74,7 +74,7 @@
                     <a href="#tarifs" class="block text-center bg-bordeaux hover:bg-red-900 text-white font-bold text-lg py-4 px-8 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
                         JE REJOINS LES 100 JOURS
                     </a>
-                    <a href="https://tidycal.com/valentinefonkou/45-minute-meeting" target="_blank" rel="noopener noreferrer" class="block text-center bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm py-3 px-6 rounded-xl transition">
+                    <a href="#reservation" onclick="selectionnerPrestation('Session Individuelle (45 min)')" class="block text-center bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm py-3 px-6 rounded-xl transition">
                         📞 Réserver un appel de 45 min avant de m'inscrire
                     </a>
                 </div>
@@ -417,7 +417,7 @@
         </div>
     </section>
 
-    <!-- SECTION 12 — QUI EST VALENTINE ? + RDV TIDYCAL -->
+    <!-- SECTION 12 — QUI EST VALENTINE ? -->
     <section class="py-16 bg-creme">
         <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -441,57 +441,130 @@
                     <p>On accomplit.</p>
                 </div>
 
-                <!-- CARTES DE PRISE DE RENDEZ-VOUS -->
-                <div class="space-y-4">
-                    <h3 class="font-bold text-bordeaux text-base">Prendre rendez-vous directement :</h3>
+                <div class="space-y-3">
+                    <a href="#reservation" onclick="selectionnerPrestation('Session Individuelle (45 min)')" class="inline-block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl transition text-sm">
+                        📅 Réserver un entretien (45 min)
+                    </a>
+                    <a href="#reservation" onclick="selectionnerPrestation('Bilan Scolaire (60 min)')" class="inline-block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl transition text-sm">
+                        🎓 Réserver un Bilan Scolaire (60 min)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12.5 — MODULE DE RÉSERVATION INTÉGRÉ (SOLUTION 100% AUTONOME) -->
+    <section id="reservation" class="py-16 bg-white border-t border-pink-100">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <span class="text-xs uppercase tracking-widest text-dore font-bold">Prise de Rendez-vous</span>
+                <h2 class="text-3xl font-bold text-bordeaux mt-1">Réserve ton créneau personnalisé</h2>
+                <p class="text-gray-600 text-sm mt-2">Sélectionne la prestation de ton choix, la date et l'horaire qui te conviennent.</p>
+            </div>
+
+            <div class="bg-creme p-6 md:p-8 rounded-2xl shadow-lg border border-dore/30">
+                <form id="formReservationRDV" onsubmit="soumettreReservation(event)" class="space-y-6">
                     
-                    <div class="bg-white p-4 rounded-xl border border-pink-200 shadow-sm">
-                        <p class="font-bold text-gray-800 text-sm">Session Individuelle (45 min)</p>
-                        <p class="text-xs text-gray-600 mb-3">Faire le point sur tes objectifs personnels ou professionnels.</p>
-                        <a href="https://tidycal.com/valentinefonkou/45-minute-meeting" target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-lg transition text-xs">
-                            📅 Réserver l'entretien (45 min)
-                        </a>
+                    <!-- Choix Prestation -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2">1. Choisis ta prestation</label>
+                        <select id="prestationRDV" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bordeaux outline-none bg-white font-medium text-gray-800">
+                            <option value="Session Individuelle (45 min)">Session Individuelle (45 min)</option>
+                            <option value="Bilan Scolaire (60 min)">Bilan Scolaire (60 min)</option>
+                        </select>
                     </div>
 
-                    <div class="bg-white p-4 rounded-xl border border-indigo-200 shadow-sm">
-                        <p class="font-bold text-gray-800 text-sm">Bilan Scolaire (60 min)</p>
-                        <p class="text-xs text-gray-600 mb-3">Évaluation complète et accompagnement sur le parcours d'études.</p>
-                        <a href="https://tidycal.com/valentinefonkou/60-minute-meeting" target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 px-4 rounded-lg transition text-xs">
-                            🎓 Réserver le Bilan Scolaire (60 min)
-                        </a>
+                    <!-- Choix Date & Heure -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">2. Choisis la date</label>
+                            <input type="date" id="dateRDV" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bordeaux outline-none bg-white font-medium text-gray-800">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">3. Choisis l'horaire</label>
+                            <select id="heureRDV" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bordeaux outline-none bg-white font-medium text-gray-800">
+                                <option value="">Sélectionner un créneau</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
                     </div>
+
+                    <!-- Vos coordonnées -->
+                    <div class="border-t border-pink-200 pt-4 space-y-4">
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">4. Tes coordonnées</label>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <input type="text" id="prenomRDV" required placeholder="Prénom *" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bordeaux outline-none bg-white">
+                            </div>
+                            <div>
+                                <input type="text" id="nomRDV" required placeholder="Nom *" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bordeaux outline-none bg-white">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <input type="email" id="emailRDV" required placeholder="E-mail *" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bordeaux outline-none bg-white">
+                            </div>
+                            <div>
+                                <input type="tel" id="telephoneRDV" required placeholder="Téléphone *" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bordeaux outline-none bg-white">
+                            </div>
+                        </div>
+
+                        <div>
+                            <textarea id="messageRDV" rows="3" placeholder="Dis-moi rapidement l'objectif de notre échange..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bordeaux outline-none bg-white"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="btnSubmitRDV" class="w-full bg-bordeaux hover:bg-red-900 text-white font-bold text-lg py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+                        CONFIRMER MON RENDEZ-VOUS
+                    </button>
+                </form>
+
+                <!-- Zone de confirmation après validation -->
+                <div id="confirmationRDV" class="hidden text-center py-8 space-y-4">
+                    <span class="text-5xl">🎉</span>
+                    <h3 class="text-2xl font-bold text-bordeaux">Rendez-vous confirmé !</h3>
+                    <p class="text-gray-700 font-medium">Un e-mail de confirmation t'a été envoyé avec tous les détails de notre entretien.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SECTION 13 — FAQ -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-creme">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-bordeaux text-center mb-10">Foire Aux Questions</h2>
             
             <div class="space-y-4">
-                <div class="border border-pink-100 rounded-xl p-6 bg-rosePoudre/30">
+                <div class="border border-pink-100 rounded-xl p-6 bg-white">
                     <h3 class="font-bold text-bordeaux text-lg mb-2">Dois-je déjà avoir un projet précis ?</h3>
                     <p class="text-sm text-gray-700">Non. Tu dois simplement avoir quelque chose que tu souhaites faire avancer : projet, évolution professionnelle, objectif personnel, activité, décision ou changement.</p>
                 </div>
 
-                <div class="border border-pink-100 rounded-xl p-6 bg-rosePoudre/30">
+                <div class="border border-pink-100 rounded-xl p-6 bg-white">
                     <h3 class="font-bold text-bordeaux text-lg mb-2">Est-ce uniquement pour les entrepreneures ?</h3>
                     <p class="text-sm text-gray-700">Non. Les 100 Jours s'adressent aux femmes qui souhaitent concrétiser quelque chose d'important dans leur vie.</p>
                 </div>
 
-                <div class="border border-pink-100 rounded-xl p-6 bg-rosePoudre/30">
+                <div class="border border-pink-100 rounded-xl p-6 bg-white">
                     <h3 class="font-bold text-bordeaux text-lg mb-2">Est-ce que les résultats sont garantis ?</h3>
                     <p class="text-sm text-gray-700">Non. Le programme fournit un cadre, des outils, un accompagnement et des mécanismes d'action. Ton évolution dépend également de ton implication et des actions que tu mets en œuvre.</p>
                 </div>
 
-                <div class="border border-pink-100 rounded-xl p-6 bg-rosePoudre/30">
+                <div class="border border-pink-100 rounded-xl p-6 bg-white">
                     <h3 class="font-bold text-bordeaux text-lg mb-2">Et si je prends du retard ?</h3>
                     <p class="text-sm text-gray-700">Tu n'as pas besoin d'être parfaite. Le programme prévoit justement des temps de bilan, d'ajustement et de reprise.</p>
                 </div>
 
-                <div class="border border-pink-100 rounded-xl p-6 bg-rosePoudre/30">
+                <div class="border border-pink-100 rounded-xl p-6 bg-white">
                     <h3 class="font-bold text-bordeaux text-lg mb-2">Puis-je payer en plusieurs fois ?</h3>
                     <p class="text-sm text-gray-700">Oui (options disponibles sur la page de paiement Stripe).</p>
                 </div>
@@ -554,11 +627,27 @@
         </div>
     </section>
 
-    <!-- SCRIPT SOUMISSION & REDIRECTION STRIPE -->
+    <!-- SCRIPTS SOUMISSION MAKE (100 JOURS & PRISE DE RDV) -->
     <script>
         const STRIPE_URL = "https://buy.stripe.com/test_28E5kEea2de76mYeQXeEo02";
-        const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/s2vy3ig9glcp3ws3241bme3dt9sgja91"; // Optionnel si tu enregistres la piste avant paiement
+        const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/s2vy3ig9glcp3ws3241bme3dt9sgja91";
 
+        // Ajuste la date minimale du sélecteur à la date du jour
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateInput = document.getElementById('dateRDV');
+            if(dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.min = today;
+            }
+        });
+
+        // Fonction pour pré-sélectionner le service depuis les boutons
+        function selectionnerPrestation(nomPrestation) {
+            const select = document.getElementById('prestationRDV');
+            if(select) select.value = nomPrestation;
+        }
+
+        // Soumission du programme Les 100 Jours
         async function soumettre100Jours(e) {
             e.preventDefault();
             const prenom = document.getElementById('prenom100').value;
@@ -568,13 +657,13 @@
             btn.textContent = "Redirection vers le paiement...";
             btn.disabled = true;
 
-            // Envoi des infos au Webhook Make (si configuré)
             try {
-                if (MAKE_WEBHOOK_URL && !MAKE_WEBHOOK_URL.includes("VOTRE_URL_ICI")) {
+                if (MAKE_WEBHOOK_URL) {
                     await fetch(MAKE_WEBHOOK_URL, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ 
+                            type_action: "INSCRIPTION_100_JOURS",
                             prenom: prenom, 
                             email: email, 
                             programme: "100_JOURS_27_SEPTEMBRE" 
@@ -582,12 +671,49 @@
                     });
                 }
             } catch (err) {
-                console.log("Webkhook Make ignoré ou indisponible, suite de la redirection.");
+                console.log("Webhook Make ignoré ou indisponible, suite de la redirection.");
             }
 
-            // Redirection Stripe avec pré-remplissage de l'e-mail
             const stripeUrlAvecEmail = `${STRIPE_URL}?prefilled_email=${encodeURIComponent(email)}`;
             window.location.href = stripeUrlAvecEmail;
+        }
+
+        // Soumission de la prise de RDV sur-mesure
+        async function soumettreReservation(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnSubmitRDV');
+            const form = document.getElementById('formReservationRDV');
+            const confirmation = document.getElementById('confirmationRDV');
+
+            const payload = {
+                type_action: "RESERVATION_RDV",
+                prestation: document.getElementById('prestationRDV').value,
+                date: document.getElementById('dateRDV').value,
+                heure: document.getElementById('heureRDV').value,
+                prenom: document.getElementById('prenomRDV').value,
+                nom: document.getElementById('nomRDV').value,
+                email: document.getElementById('emailRDV').value,
+                telephone: document.getElementById('telephoneRDV').value,
+                message: document.getElementById('messageRDV').value
+            };
+
+            btn.textContent = "Réservation en cours...";
+            btn.disabled = true;
+
+            try {
+                await fetch(MAKE_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                form.classList.add('hidden');
+                confirmation.classList.remove('hidden');
+            } catch (err) {
+                alert("Une erreur s'est produite lors de la réservation. Veuillez réessayer.");
+                btn.textContent = "CONFIRMER MON RENDEZ-VOUS";
+                btn.disabled = false;
+            }
         }
     </script>
 </body>
